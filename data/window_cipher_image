@@ -1,0 +1,60 @@
+<window>
+	name:cipher_image
+	starting_position:-1,-1
+	width:1280
+	height:720
+	title:Image Cipher
+	
+	<info>
+		location:-1,36
+		text:Input
+	</info>
+	
+	<info>
+		location:2,58
+		background_type:sprite
+	</info>
+	
+	<button>
+		location:2,368
+		text:Swap Input/Output
+		event:cipher_image_swap
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<button>
+		location:545,368
+		text:Encipher
+		event:encipher_image
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<button>
+		location:644,368
+		text:Decipher
+		event:decipher_image
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<info>
+		location:-1,390
+		text:Output
+	</info>
+	
+	<info>
+		location:2,412
+		background_type:sprite
+	</info>
+	
+	<button>
+		location:-1,693
+		text:Save to File
+		event:open_window_input_cipher_image_save_file
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+</window>

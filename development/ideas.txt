@@ -1,0 +1,14 @@
+Name: Ainos
+Transliteration of Ancient Greek: αἶνος
+As far as I can tell, this is the word that the English word 'enigma' is ultimately derived from
+
+For either enciphering or deciphering, seeds are needed
+A seed is input as a string of text
+Each seed represents one pass over the input data
+Each seed represents a unique pairing of input values to result values
+This pairing is not a function of the input values
+The same input value can become different result values with the same seed
+A result value for a given input value can match the input value
+
+Other ideas:
+Networked chat mode

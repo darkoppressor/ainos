@@ -1,0 +1,56 @@
+<window>
+	name:main_menu
+	starting_position:-1,-1
+	width:180
+	height:173
+	title:Main Menu
+	
+	<button>
+		location:-1,36
+		text:Edit Seeds
+		event:window_edit_seeds
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<button>
+		location:-1,58
+		text:Text Cipher
+		event:open_window_cipher_text
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<button>
+		location:-1,80
+		text:Image Cipher
+		event:open_window_cipher_image
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<button>
+		location:-1,102
+		text:Sound Cipher
+		event:open_window_cipher_sound
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<button>
+		location:-1,124
+		text:Options
+		event:options_window
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<button>
+		location:-1,146
+		text:Quit
+		event:quit
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+</window>

@@ -1,0 +1,40 @@
+<window>
+	name:edit_seeds
+	starting_position:-1,-1
+	width:1280
+	height:720
+	title:Edit Seeds
+	
+	<info>
+		location:2,36
+		text:Seeds:
+	</info>
+	
+	<info>
+		location:2,58
+		mutable:true
+		max_text_length:2147483647
+		allowed_input:backspace,newline,space,letters,numbers,symbols
+		font:small
+		background_type:standard
+		scrolling:true
+		box:181,51
+	</info>
+	
+	<button>
+		location:600,692
+		text:OK
+		event:edit_seeds
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<button>
+		location:635,692
+		text:Cancel
+		event:close_window
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+</window>

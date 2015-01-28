@@ -1,0 +1,52 @@
+<window>
+	name:cipher_sound
+	starting_position:-1,-1
+	width:1280
+	height:720
+	title:Sound Cipher
+	
+	<button>
+		location:2,36
+		text:Play Input
+		event:cipher_sound_input
+	</button>
+	
+	<button>
+		location:2,58
+		text:Swap Input/Output
+		event:cipher_sound_swap
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<button>
+		location:545,58
+		text:Encipher
+		event:encipher_sound
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<button>
+		location:644,58
+		text:Decipher
+		event:decipher_sound
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<button>
+		location:2,80
+		text:Play Output
+		event:cipher_sound_output
+	</button>
+	
+	<button>
+		location:-1,693
+		text:Save to File
+		event:open_window_input_cipher_sound_save_file
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+</window>

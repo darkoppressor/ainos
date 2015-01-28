@@ -1,0 +1,87 @@
+<window>
+	name:cipher_text
+	starting_position:-1,-1
+	width:1280
+	height:720
+	title:Text Cipher
+	
+	<button>
+		location:2,36
+		text:Clear Input
+		event:cipher_text_clear_input
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<info>
+		location:-1,36
+		text:Input
+	</info>
+	
+	<info>
+		location:2,58
+		mutable:true
+		max_text_length:2147483647
+		allowed_input:backspace,newline,space,letters,numbers,symbols
+		font:small
+		background_type:standard
+		scrolling:true
+		box:181,24
+	</info>
+	
+	<button>
+		location:2,368
+		text:Swap Input/Output
+		event:cipher_text_swap
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<button>
+		location:545,368
+		text:Encipher
+		event:encipher_text
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<button>
+		location:644,368
+		text:Decipher
+		event:decipher_text
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<info>
+		location:-1,390
+		text:Output
+	</info>
+	
+	<info>
+		location:2,412
+		mutable:true
+		max_text_length:2147483647
+		font:small
+		background_type:standard
+		scrolling:true
+		box:181,23
+	</info>
+	
+	<button>
+		location:475,693
+		text:Copy to Clipboard
+		event:cipher_text_to_clipboard
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<button>
+		location:673,693
+		text:Save to File
+		event:open_window_input_cipher_text_save_file
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+</window>
