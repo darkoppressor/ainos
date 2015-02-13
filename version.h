@@ -6,16 +6,16 @@
 namespace Version{
 	//Build date
 	static const char YEAR[]="2015";
-	static const char MONTH[]="01";
-	static const char DAY[]="26";
+	static const char MONTH[]="02";
+	static const char DAY[]="13";
 
 	//Version
-	static const int MAJOR=0;
-	static const int MINOR=0;
-	static const int MICRO=1;
+	static const int MAJOR=1;
+	static const int MINOR=1;
+	static const int MICRO=0;
 
 	//Status
-	static const char STATUS[]="alpha";
+	static const char STATUS[]="release";
 
 	//Engine version
 	static const std::string ENGINE_VERSION="1.2.3";
