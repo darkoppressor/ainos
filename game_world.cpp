@@ -16,6 +16,9 @@ void Game_World::clear_world(){
 
     input_image=0;
     output_image=0;
+
+    input_sound=0;
+    output_sound=0;
 }
 
 void Game_World::generate_world(){
@@ -237,6 +240,68 @@ void Game_World::update_image_output(){
         else{
             image.add_image(CIPHER_IMAGE_OUTPUT,output_image);
         }
+    }
+}
+
+Mix_Chunk* Game_World::get_input_sound(){
+    return input_sound;
+}
+
+Mix_Chunk* Game_World::get_output_sound(){
+    return output_sound;
+}
+
+bool Game_World::set_input_sound(string sound_location){
+    if(input_sound!=0){
+        Mix_FreeChunk(input_sound);
+    }
+
+    input_sound=Mix_LoadWAV(sound_location.c_str());
+
+    update_sound_input();
+
+    if(input_sound!=0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+void Game_World::set_output_sound(Mix_Chunk* chunk){
+    if(output_sound!=0){
+        Mix_FreeChunk(output_sound);
+    }
+
+    output_sound=chunk;
+
+    update_sound_output();
+}
+
+void Game_World::swap_input_output_sound(){
+    swap(input_sound,output_sound);
+
+    update_sound_input();
+    update_sound_output();
+}
+
+void Game_World::update_sound_input(){
+    sound_system.stop_sounds();
+
+    sound_system.remove_sound(CIPHER_SOUND_INPUT);
+
+    if(input_sound!=0){
+        sound_system.add_sound(CIPHER_SOUND_INPUT,input_sound);
+    }
+}
+
+void Game_World::update_sound_output(){
+    sound_system.stop_sounds();
+
+    sound_system.remove_sound(CIPHER_SOUND_OUTPUT);
+
+    if(output_sound!=0){
+        sound_system.add_sound(CIPHER_SOUND_OUTPUT,output_sound);
     }
 }
 

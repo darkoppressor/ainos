@@ -92,6 +92,9 @@ void Engine_Interface::handle_drag_and_drop(string file){
     else if(is_window_on_top(get_window("cipher_image"))){
         game.world.set_input_image(file);
     }
+    else if(is_window_on_top(get_window("cipher_sound"))){
+        game.world.set_input_sound(file);
+    }
     else{
         if(boost::algorithm::ends_with(file,".png")){
             if(game.world.set_input_image(file)){
@@ -99,7 +102,9 @@ void Engine_Interface::handle_drag_and_drop(string file){
             }
         }
         else if(boost::algorithm::ends_with(file,".ogg")){
-            ///
+            if(game.world.set_input_sound(file)){
+                get_window("cipher_sound")->toggle_on(true,true);
+            }
         }
         else{
             File_IO_Load load(file);

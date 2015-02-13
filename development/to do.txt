@@ -1,6 +1,4 @@
-Finish implementing sound cipher
-
-Don't forget that when ogg file is dragged over window, it should be loaded as sound
+Implement saving Mix_Chunk* to disk
 
 Give more thought to Android interface
 Is there anything I can do to make it more useful?

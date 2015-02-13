@@ -1,0 +1,43 @@
+<window>
+	name:input_cipher_sound_save_file
+	starting_position:-1,-1
+	width:419
+	height:107
+	title:Save to File
+	
+	<info>
+		location:2,36
+		text:Please enter a filename:
+	</info>
+	
+	<info>
+		location:2,58
+		text:output
+		mutable:true
+		max_text_length:32
+		allowed_input:backspace,letters,numbers,symbols_posix
+		background_type:standard
+	</info>
+	
+	<info>
+		location:365,58
+		text:.wav
+	</info>
+	
+	<button>
+		location:157,80
+		text:OK
+		event:cipher_sound_save_file
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+	<button>
+		location:190,80
+		text:Cancel
+		event:close_window
+		sound_moused:moused_1
+		sound_click:click_1
+	</button>
+	
+</window>

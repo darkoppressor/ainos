@@ -90,32 +90,96 @@ bool Button_Events::handle_button_event_game(string button_event,Window* parent_
     }
 
     else if(button_event=="encipher_image"){
-        Cipher cipher(game.world.seeds);
+        if(game.world.get_input_image()!=0){
+            Cipher cipher(game.world.seeds);
 
-        SDL_Surface* output=SDL_ConvertSurface(game.world.get_input_image(),game.world.get_input_image()->format,0);
+            SDL_Surface* output=SDL_ConvertSurface(game.world.get_input_image(),game.world.get_input_image()->format,0);
 
-        cipher.encipher(output);
+            cipher.encipher(output);
 
-        game.world.set_output_image(output);
+            game.world.set_output_image(output);
+        }
 
         return true;
     }
     else if(button_event=="decipher_image"){
-        Cipher cipher(game.world.seeds);
+        if(game.world.get_input_image()!=0){
+            Cipher cipher(game.world.seeds);
 
-        SDL_Surface* output=SDL_ConvertSurface(game.world.get_input_image(),game.world.get_input_image()->format,0);
+            SDL_Surface* output=SDL_ConvertSurface(game.world.get_input_image(),game.world.get_input_image()->format,0);
 
-        cipher.decipher(output);
+            cipher.decipher(output);
 
-        game.world.set_output_image(output);
+            game.world.set_output_image(output);
+        }
 
         return true;
     }
 
     else if(button_event=="cipher_image_save_file"){
         if(parent_window!=0){
-            string path=engine_interface.get_save_directory()+parent_window->get_info_text(0)+".png";
-            IMG_SavePNG(game.world.get_output_image(),path.c_str());
+            if(game.world.get_input_image()!=0){
+                string path=engine_interface.get_save_directory()+parent_window->get_info_text(0)+".png";
+                IMG_SavePNG(game.world.get_output_image(),path.c_str());
+            }
+
+            parent_window->toggle_on(true,false);
+        }
+
+        return true;
+    }
+
+    else if(button_event=="cipher_sound_input"){
+        sound_system.play_sound(CIPHER_SOUND_INPUT);
+
+        return true;
+    }
+
+    else if(button_event=="cipher_sound_output"){
+        sound_system.play_sound(CIPHER_SOUND_OUTPUT);
+
+        return true;
+    }
+
+    else if(button_event=="cipher_sound_swap"){
+        game.world.swap_input_output_sound();
+
+        return true;
+    }
+
+    else if(button_event=="encipher_sound"){
+        if(game.world.get_input_sound()!=0){
+            Cipher cipher(game.world.seeds);
+
+            Mix_Chunk* output=Mix_QuickLoad_RAW(game.world.get_input_sound()->abuf,game.world.get_input_sound()->alen);
+
+            cipher.encipher(output);
+
+            game.world.set_output_sound(output);
+        }
+
+        return true;
+    }
+    else if(button_event=="decipher_sound"){
+        if(game.world.get_input_sound()!=0){
+            Cipher cipher(game.world.seeds);
+
+            Mix_Chunk* output=Mix_QuickLoad_RAW(game.world.get_input_sound()->abuf,game.world.get_input_sound()->alen);
+
+            cipher.decipher(output);
+
+            game.world.set_output_sound(output);
+        }
+
+        return true;
+    }
+
+    else if(button_event=="cipher_sound_save_file"){
+        if(parent_window!=0){
+            if(game.world.get_input_sound()!=0){
+                string path=engine_interface.get_save_directory()+parent_window->get_info_text(0)+".wav";
+                ///IMG_SavePNG(game.world.get_output_image(),path.c_str());
+            }
 
             parent_window->toggle_on(true,false);
         }

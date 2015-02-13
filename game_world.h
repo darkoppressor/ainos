@@ -5,9 +5,13 @@
 #include <string>
 
 #include <SDL.h>
+#include <SDL_mixer.h>
 
 const std::string CIPHER_IMAGE_INPUT="cipher_input";
 const std::string CIPHER_IMAGE_OUTPUT="cipher_output";
+
+const std::string CIPHER_SOUND_INPUT="cipher_input";
+const std::string CIPHER_SOUND_OUTPUT="cipher_output";
 
 class Game_World{
 private:
@@ -17,6 +21,9 @@ private:
 
     SDL_Surface* input_image;
     SDL_Surface* output_image;
+
+    Mix_Chunk* input_sound;
+    Mix_Chunk* output_sound;
 
 public:
 
@@ -47,6 +54,14 @@ public:
     void swap_input_output_image();
     void update_image_input();
     void update_image_output();
+
+    Mix_Chunk* get_input_sound();
+    Mix_Chunk* get_output_sound();
+    bool set_input_sound(std::string sound_location);
+    void set_output_sound(Mix_Chunk* chunk);
+    void swap_input_output_sound();
+    void update_sound_input();
+    void update_sound_output();
 
     void update_window_seeds();
     void update_window_cipher_text();
