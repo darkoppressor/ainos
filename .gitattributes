@@ -1,5 +1,5 @@
 # Auto detect text files and perform LF normalization
-* text=auto
+* text eol=lf
 
 # Force most file types to have Unix/Linux line endings
 *.* text eol=lf
