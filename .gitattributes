@@ -1,0 +1,14 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Force most file types to have Unix/Linux line endings
+*.* text eol=lf
+
+# Force binary files to be handled as binaries
+*.png
+*.bmp
+*.ico
+*.ogg
+*.wav
+*.ttf
+*.exe
